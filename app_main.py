@@ -32,7 +32,7 @@ try:
     conn = psycopg2.connect(
         dbname="car",
         user="postgres",
-        password="Namanji25",
+        password="your_password_here",
         host="localhost",
         port="5432"
     )
@@ -1092,5 +1092,6 @@ elif st.session_state.page == "Detailed Analysis":
         if st.button("⬅ Back to Dashboard", use_container_width=True):
             st.session_state["page"] = "Dashboard"
             st.rerun()
+
 
         st.markdown("<div class='mini-foot'>Prototype UI — login, add cars, mock diagnosis, and polished visuals. Integrate ML & DB next.</div>", unsafe_allow_html=True)

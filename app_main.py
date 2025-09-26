@@ -30,11 +30,11 @@ from datetime import datetime
 # Connect to PostgreSQL - MAKE SURE TO CONFIGURE YOUR DB CREDENTIALS
 try:
     conn = psycopg2.connect(
-        dbname="postgres",  # Supabase mein database ka naam 'postgres' hota hai
-        user="postgres",
+        database="postgres",  # Supabase mein database ka naam 'postgres' hota hai
+        user="postgres.hgbkbqginzijoprmxrhi",
         password="Namanji@25",  # Yahan apna Supabase password daalein
-        host="db.hgbkbqginzijoprmxrhi.supabase.co",         # Yahan Supabase se copy kiya gaya host daalein
-        port="5432"
+        host="aws-1-ap-south-1.pooler.supabase.com",         # Yahan Supabase se copy kiya gaya host daalein
+        port="6543"
     )
     conn.autocommit = True
     cursor = conn.cursor()
@@ -1095,5 +1095,6 @@ elif st.session_state.page == "Detailed Analysis":
 
 
         st.markdown("<div class='mini-foot'>Prototype UI — login, add cars, mock diagnosis, and polished visuals. Integrate ML & DB next.</div>", unsafe_allow_html=True)
+
 
 

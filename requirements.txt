@@ -3,4 +3,5 @@ pandas
 scikit-learn
 numpy
 plotly
+psycopg2
 reportlab

@@ -32,7 +32,7 @@ try:
     conn = psycopg2.connect(
         dbname="car",
         user="postgres",
-        password="your_password_here",
+        password="Namanji25",
         host="localhost",
         port="5432"
     )
@@ -1095,3 +1095,4 @@ elif st.session_state.page == "Detailed Analysis":
 
 
         st.markdown("<div class='mini-foot'>Prototype UI — login, add cars, mock diagnosis, and polished visuals. Integrate ML & DB next.</div>", unsafe_allow_html=True)
+

@@ -30,54 +30,54 @@ from datetime import datetime
 # Connect to PostgreSQL - MAKE SURE TO CONFIGURE YOUR DB CREDENTIALS
 try:
     conn = psycopg2.connect(
-        dbname="car",
+        dbname="postgres",  # Supabase mein database ka naam 'postgres' hota hai
         user="postgres",
-        password="Namanji25",
-        host="localhost",
+        password="Namanji@25",  # Yahan apna Supabase password daalein
+        host="db.hgbkbqginzijoprmxrhi.supabase.co",         # Yahan Supabase se copy kiya gaya host daalein
         port="5432"
     )
     conn.autocommit = True
     cursor = conn.cursor()
 except psycopg2.OperationalError as e:
-    st.error(f"❌ Database connection failed. Please ensure PostgreSQL is running and credentials are correct. Error: {e}")
+    st.error(f"❌ Database connection failed. Please check your credentials. Error: {e}")
     st.stop()
 
-def init_db():
-    """Create tables if they don't exist."""
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS users (
-            user_id SERIAL PRIMARY KEY,
-            username TEXT UNIQUE NOT NULL,
-            password_hash TEXT NOT NULL,
-            full_name TEXT,
-            email TEXT,
-            mobile TEXT
-        );
-    """)
-    cursor.execute("""
-    CREATE TABLE IF NOT EXISTS cars (
-        car_id SERIAL PRIMARY KEY, 
-        user_id INTEGER REFERENCES users(user_id) ON DELETE CASCADE,
-        make TEXT NOT NULL,
-        model TEXT NOT NULL,
-        year INTEGER,
-        odometer INTEGER
-    );
-""")
+# def init_db():
+#     """Create tables if they don't exist."""
+#     cursor.execute("""
+#         CREATE TABLE IF NOT EXISTS users (
+#             user_id SERIAL PRIMARY KEY,
+#             username TEXT UNIQUE NOT NULL,
+#             password_hash TEXT NOT NULL,
+#             full_name TEXT,
+#             email TEXT,
+#             mobile TEXT
+#         );
+#     """)
+#     cursor.execute("""
+#     CREATE TABLE IF NOT EXISTS cars (
+#         car_id SERIAL PRIMARY KEY, 
+#         user_id INTEGER REFERENCES users(user_id) ON DELETE CASCADE,
+#         make TEXT NOT NULL,
+#         model TEXT NOT NULL,
+#         year INTEGER,
+#         odometer INTEGER
+#     );
+# """)
     
-    cursor.execute("""
-    CREATE TABLE IF NOT EXISTS contact_submissions (
-        submission_id SERIAL PRIMARY KEY,
-        name TEXT NOT NULL,
-        email TEXT NOT NULL,
-        message TEXT NOT NULL,
-        submission_time TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
-    );
-    """)
+#     cursor.execute("""
+#     CREATE TABLE IF NOT EXISTS contact_submissions (
+#         submission_id SERIAL PRIMARY KEY,
+#         name TEXT NOT NULL,
+#         email TEXT NOT NULL,
+#         message TEXT NOT NULL,
+#         submission_time TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+#     );
+#     """)
 
 
-# Call init_db on startup
-init_db()
+# # Call init_db on startup
+# init_db()
 
 def hash_password(pw):
     """Hashes a password using SHA256."""
@@ -1095,4 +1095,5 @@ elif st.session_state.page == "Detailed Analysis":
 
 
         st.markdown("<div class='mini-foot'>Prototype UI — login, add cars, mock diagnosis, and polished visuals. Integrate ML & DB next.</div>", unsafe_allow_html=True)
+
 

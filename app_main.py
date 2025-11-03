@@ -403,8 +403,6 @@ if selected_page != st.session_state.page:
     st.rerun()
 
 st.sidebar.markdown("---")
-st.sidebar.caption("Status: 🟢 Online")
-
 st.sidebar.caption("AutoCare AI | Version 1.0 — Real DB and ML integration.")
 
 
@@ -1097,6 +1095,7 @@ elif st.session_state.page == "Detailed Analysis":
 
 
         st.markdown("<div class='mini-foot'>Prototype UI — login, add cars, mock diagnosis, and polished visuals. Integrate ML & DB next.</div>", unsafe_allow_html=True)
+
 
 
 

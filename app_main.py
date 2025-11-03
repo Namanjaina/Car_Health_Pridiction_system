@@ -213,8 +213,8 @@ model, scaler, encoder, training_columns = load_model_assets()
 
 # ----------------------- Basic Config -----------------------
 st.set_page_config(page_title="AutoCare AI ", layout="wide", page_icon="🚗")
-st.title("AutoCare AI — UI Prototype")
-st.markdown("Prototype: Sign up, login, add car details, view a polished dashboard.")
+st.title("AI CAR HEALTH MONITOR")
+st.markdown("Sign up, login, add car details, view a polished dashboard.")
 
 # ----------------------- Inject CSS (theme + animations) -----------------------
 st.markdown(
@@ -1095,6 +1095,7 @@ elif st.session_state.page == "Detailed Analysis":
 
 
         st.markdown("<div class='mini-foot'>Prototype UI — login, add cars, mock diagnosis, and polished visuals. Integrate ML & DB next.</div>", unsafe_allow_html=True)
+
 
 
 

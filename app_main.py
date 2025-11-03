@@ -3,7 +3,7 @@
 Expanded Streamlit UI Mock:
 - Signup / Login with real PostgreSQL DB
 - User Profile (personal + car details from DB)
-- Dashboard (mock UI, charts, alerts)
+- Dashboard (Attractive UI, charts, alerts)
 - Attractive styling + animations
 Note: This is a UI-first mock for prototyping with a real database.
 """
@@ -403,7 +403,9 @@ if selected_page != st.session_state.page:
     st.rerun()
 
 st.sidebar.markdown("---")
-st.sidebar.caption("Prototype UI — Real DB and ML integration.")
+st.sidebar.caption("Status: 🟢 Online")
+
+st.sidebar.caption("AutoCare AI | Version 1.0 — Real DB and ML integration.")
 
 
 # ----------------------- LIVE FLEET MONITORING -----------------------
@@ -1095,6 +1097,7 @@ elif st.session_state.page == "Detailed Analysis":
 
 
         st.markdown("<div class='mini-foot'>Prototype UI — login, add cars, mock diagnosis, and polished visuals. Integrate ML & DB next.</div>", unsafe_allow_html=True)
+
 
 
 

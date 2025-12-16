@@ -32,7 +32,7 @@ try:
     conn = psycopg2.connect(
         dbname="postgres",  # Supabase mein database ka naam 'postgres' hota hai
         user="postgres.hgbkbqginzijoprmxrhi",
-        password="7cbQAPtf61biMeLh",  # Yahan apna Supabase password daalein
+        password="Namanji25",  # Yahan apna Supabase password daalein
         host="aws-1-ap-south-1.pooler.supabase.com",         # Yahan Supabase se copy kiya gaya host daalein
         port="6543"
     )

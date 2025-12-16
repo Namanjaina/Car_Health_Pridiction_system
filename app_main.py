@@ -715,7 +715,7 @@ elif st.session_state.page == "Profile":
             for c in user_cars:
                 with st.expander(f"🚘 {c['make']} {c['model']} ({c['year']}) — {c['odometer']} km", expanded=False):
                     with st.form(f"edit_car_form_{c['car_id']}"):
-                        new_name = st.text_input("Name", value=c['name'], key=f"name_{c['car_id']}")
+                        new_name = st.text_input("Name", value=c['make'], key=f"name_{c['car_id']}")
                         new_model = st.text_input("Model", value=c['model'], key=f"model_{c['car_id']}")
                         new_year = st.number_input("Year", min_value=1980, max_value=2035, value=c['year'], key=f"year_{c['car_id']}")
                         new_odo = st.number_input("Odometer (km)", min_value=0, value=c['odometer'], step=500, key=f"odo_{c['car_id']}")
@@ -1095,6 +1095,7 @@ elif st.session_state.page == "Detailed Analysis":
 
 
         st.markdown("<div class='mini-foot'>Prototype UI — login, add cars, diagnosis, and polished visuals. Integrate ML & DB next.</div>", unsafe_allow_html=True)
+
 
 
 

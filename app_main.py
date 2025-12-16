@@ -1094,7 +1094,8 @@ elif st.session_state.page == "Detailed Analysis":
             st.rerun()
 
 
-        st.markdown("<div class='mini-foot'>Prototype UI — login, add cars, mock diagnosis, and polished visuals. Integrate ML & DB next.</div>", unsafe_allow_html=True)
+        st.markdown("<div class='mini-foot'>Prototype UI — login, add cars, diagnosis, and polished visuals. Integrate ML & DB next.</div>", unsafe_allow_html=True)
+
 
 
 

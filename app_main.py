@@ -691,7 +691,7 @@ elif st.session_state.page == "Profile":
 
         with st.form("add_car_form", clear_on_submit=True):
             st.markdown("#### ➕ Add a Car")
-            make = st.text_input("🚘 Car name", placeholder="e.g., Toyota")
+            make = st.text_input("🚘 Car Name", placeholder="e.g., Toyota")
             model = st.text_input("📑 Model", placeholder="e.g., Corolla")
             col1, col2 = st.columns(2)
             with col1:
@@ -701,10 +701,10 @@ elif st.session_state.page == "Profile":
 
             submitted = st.form_submit_button("➕ Add Car", use_container_width=True)
             if submitted:
-                if not (name and model):
+                if not (make and model):
                     st.error("❌ Please enter both make and model.")
                 else:
-                    add_car(username, name, model, year, odometer)
+                    add_car(username, make, model, year, odometer)
                     st.success(f"✅ **{make} {model} ({year})** added successfully!")
                     st.rerun()
 
@@ -727,12 +727,12 @@ elif st.session_state.page == "Profile":
                             delete_car_btn = st.form_submit_button("🗑 Delete", type="secondary")
 
                         if save_car:
-                            update_car(c['car_id'], new_name, new_model, new_year, new_odo)
+                            update_car(c['car_id'], new_make, new_model, new_year, new_odo)
                             st.success("✅ Car details updated.")
                             st.rerun()
                         if delete_car_btn:
                             delete_car(c['car_id'])
-                            st.warning(f"🗑 {c['name']} {c['model']} removed.")
+                            st.warning(f"🗑 {c['make']} {c['model']} removed.")
                             st.rerun()
         st.markdown("</div>", unsafe_allow_html=True)
 
@@ -1095,6 +1095,7 @@ elif st.session_state.page == "Detailed Analysis":
 
 
         st.markdown("<div class='mini-foot'>Prototype UI — login, add cars, diagnosis, and polished visuals. Integrate ML & DB next.</div>", unsafe_allow_html=True)
+
 
 
 

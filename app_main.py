@@ -713,7 +713,7 @@ elif st.session_state.page == "Profile":
             st.info("No cars added yet. Use the form above to add one.")
         else:
             for c in user_cars:
-                with st.expander(f"🚘 {c['name']} {c['model']} ({c['year']}) — {c['odometer']} km", expanded=False):
+                with st.expander(f"🚘 {c['make']} {c['model']} ({c['year']}) — {c['odometer']} km", expanded=False):
                     with st.form(f"edit_car_form_{c['car_id']}"):
                         new_name = st.text_input("Name", value=c['name'], key=f"name_{c['car_id']}")
                         new_model = st.text_input("Model", value=c['model'], key=f"model_{c['car_id']}")
@@ -1095,6 +1095,7 @@ elif st.session_state.page == "Detailed Analysis":
 
 
         st.markdown("<div class='mini-foot'>Prototype UI — login, add cars, diagnosis, and polished visuals. Integrate ML & DB next.</div>", unsafe_allow_html=True)
+
 
 
 

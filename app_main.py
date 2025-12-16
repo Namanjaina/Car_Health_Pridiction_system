@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-Expanded Streamlit UI Mock:
+Expanded Streamlit UI:
 - Signup / Login with real PostgreSQL DB
 - User Profile (personal + car details from DB)
 - Dashboard (Attractive UI, charts, alerts)
 - Attractive styling + animations
-Note: This is a UI-first mock for prototyping with a real database.
+Note: This is a UI-first for prototyping with a real database.
 """
 
 import streamlit as st
@@ -1095,6 +1095,7 @@ elif st.session_state.page == "Detailed Analysis":
 
 
         st.markdown("<div class='mini-foot'>Prototype UI — login, add cars, diagnosis, and polished visuals. Integrate ML & DB next.</div>", unsafe_allow_html=True)
+
 
 
 
